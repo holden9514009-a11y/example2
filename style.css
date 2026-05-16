@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026학년도 하반기 우리 반 청소 신청</title>
+    <style>
+        /* 기본 스타일: 지브리풍의 부드럽고 자연스러운 색감 */
+        :root {
+            --bg-color: #fdfaf5; /* 부드러운 크림색 */
+            --primary-color: #88c9a1; /* 따뜻한 초록색 */
+            --accent-color: #f9e1a1; /* 포근한 노란색 */
+            --text-color: #554433; /* 짙은 갈색, 가독성 좋음 */
+            --container-bg: #ffffff;
+            --border-radius: 20px;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-wrapper {
+            width: 100%;
+            max-width: 650px;
+            margin: 20px;
+            box-shadow: 0 10px 25px rgba(136, 201, 161, 0.15);
+            border-radius: var(--border-radius);
+            overflow: hidden; /* 이미지 둥글게 처리 */
+            background: var(--container-bg);
+        }
+
+        /* 상단 지브리 삽화 영역 */
+        .header-illustration {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content-container {
+            padding: 30px 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-color);
+            font-size: 26px;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .notice {
+            background-color: #e8f8f1; /* 아주 연한 초록 */
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            font-size: 14.5px;
+            line-height: 1.6;
+            border: 1px solid #c9ebd8;
+        }
+
+        .notice strong {
+            color: #5d9e78;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        input[type="text"], input[type="number"], select, input[type="date"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 15px;
+            color: var(--text-color);
+            background-color: #fafafa;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .date-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+        }
+
+        /* 구분선 */
+        hr {
+            border: 0;
+            border-top: 2px dashed #e0e0e0;
+            margin: 40px 0;
+        }
+
+        /* 제출 버튼: 따뜻한 초록색 */
+        button {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 19px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #77b890;
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <img src="image_0.png" alt="함께 웃으며 청소하는 우리 반 (Ghibli Style)" class="header-illustration">
+
+    <div class="content-container">
+        <h1>🌱 따뜻한 마음을 나누는 청소 신청</h1>
+        <p class="subtitle">(2026년 6월 ~ 12월) 행복한 우리 반 만들기 프로젝트</p>
+
+        <div class="notice">
+            <strong>[서로를 위한 약속]</strong><br>
+            매일 5명의 지킴이가 우리 공간을 빛내줍니다.<br>
+            희망 날짜 5개와 담당하고 싶은 구역의 1~3순위를<br>
+            빠짐없이 입력해 주세요. 함께해서 즐거워요!
+        </div>
+
+        <form id="cleaningForm">
+            <div class="form-group">
+                <label for="studentNum">학번 (출석번호)</label>
+                <input type="number" id="studentNum" min="1" max="26" placeholder="예: 7" required>
+            </div>
+            <div class="form-group">
+                <label for="studentName">이름</label>
+                <input type="text" id="studentName" placeholder="맑은 이름을 입력하세요" required>
+            </div>
+
+            <div class="form-group">
+                <label for="targetMonth">신청 월 (6월 ~ 12월)</label>
+                <select id="targetMonth" required>
+                    <option value="">함께할 월을 선택하세요</option>
+                    <option value="6">2026년 6월, 푸른 달</option>
+                    <option value="7">2026년 7월, 햇살 달</option>
+                    <option value="8">2026년 8월, 매미 달</option>
+                    <option value="9">2026년 9월, 결실 달</option>
+                    <option value="10">2026년 10월, 단풍 달</option>
+                    <option value="11">2026년 11월, 서리 달</option>
+                    <option value="12">2026년 12월, 눈꽃 달</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+                <label>📅 희망 청소 날짜 (5개 선택)</label>
+                <div class="date-group">
+                    <input type="date" name="dates" required>
+                    <input type="date" name="dates" required>
+                    <input type="date" name="dates" required>
+                    <input type="date" name="dates" required>
+                    <input type="date" name="dates" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>✨ 희망 담당 구
