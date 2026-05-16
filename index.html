@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026학년도 하반기 청소 당번 신청</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        p.subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #34495e;
+        }
+        input[type="text"], input[type="number"], select, input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        .date-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        button {
+            width: 100%;
+            background-color: #27ae60;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2ecc71;
+        }
+        .notice {
+            background-color: #e8f8f5;
+            padding: 15px;
+            border-left: 5px solid #1abc9c;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🧹 2026학년도 하반기 청소 신청</h1>
+    <p class="subtitle">(6월 ~ 12월) 행복하고 깨끗한 우리 반 만들기</p>
+
+    <div class="notice">
+        <strong>[안내사항]</strong><br>
+        - 매일 총 5명이 청소를 담당합니다.<br>
+        - 희망 날짜 5개와 담당하고 싶은 구역의 순위를 꼭 모두 입력해 주세요.
+    </div>
+
+    <form id="cleaningForm">
+        <div class="form-group">
+            <label for="studentNum">학번 (출석번호)</label>
+            <input type="number" id="studentNum" min="1" max="26" placeholder="예: 15" required>
+        </div>
+        <div class="form-group">
+            <label for="studentName">이름</label>
+            <input type="text" id="studentName" placeholder="이름을 입력하세요" required>
+        </div>
+
+        <div class="form-group">
+            <label for="targetMonth">신청 월 (6월 ~ 12월)</label>
+            <select id="targetMonth" required>
+                <option value="">월을 선택하세요</option>
+                <option value="6">2026년 6월</option>
+                <option value="7">2026년 7월</option>
+                <option value="8">2026년 8월</option>
+                <option value="9">2026년 9월</option>
+                <option value="10">2026년 10월</option>
+                <option value="11">2026년 11월</option>
+                <option value="12">2026년 12월</option>
+            </select>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+        <div class="form-group">
+            <label>📅 희망 청소 날짜 (5개 선택)</label>
+            <div class="date-group">
+                <input type="date" name="dates" required>
+                <input type="date" name="dates" required>
+                <input type="date" name="dates" required>
+                <input type="date" name="dates" required>
+                <input type="date" name="dates" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>✨ 희망 담당 구역 순위</label>
+            <p style="font-size:13px; color:#7f8c8d; margin-top:0;">1지망부터 3지망까지 중복되지 않게 선택해 주세요.</p>
+            
+            <div style="margin-bottom: 10px;">
+                <select name="choice1" required>
+                    <option value="">[1순위] 구역을 선택하세요</option>
+                    <option value="sweep12">교실 쓸기 (1/2분단)</option>
+                    <option value="sweep34">교실 쓸기 (3/4분단)</option>
+                    <option value="mop12">교실 닦기 (1/2분단)</option>
+                    <option value="mop34">교실 닦기 (3/4분단)</option>
+                    <option value="hallway">복도 쓸고 닦기</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <select name="choice2" required>
+                    <option value="">[2순위] 구역을 선택하세요</option>
+                    <option value="sweep12">교실 쓸기 (1/2분단)</option>
+                    <option value="sweep34">교실 쓸기 (3/4분단)</option>
+                    <option value="mop12">교실 닦기 (1/2분단)</option>
+                    <option value="mop34">교실 닦기 (3/4분단)</option>
+                    <option value="hallway">복도 쓸고 닦기</option>
+                </select>
+            </div>
+            <div>
+                <select name="choice3" required>
+                    <option value="">[3순위] 구역을 선택하세요</option>
+                    <option value="sweep12">교실 쓸기 (1/2분단)</option>
+                    <option value="sweep34">교실 쓸기 (3/4분단)</option>
+                    <option value="mop12">교실 닦기 (1/2분단)</option>
+                    <option value="mop34">교실 닦기 (3/4분단)</option>
+                    <option value="hallway">복도 쓸고 닦기</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" onclick="submitForm(event)">신청서 제출하기</button>
+    </form>
+</div>
+
+<script>
+    function submitForm(event) {
+        event.preventDefault(); // 기본 제출 동작 방지
+        
+        // 여기에 향후 백엔드(서버)로 데이터를 보내는 로직이 들어갑니다.
+        // 지금은 시각적 확인을 위한 알림창을 띄웁니다.
+        alert("청소 신청이 완료되었습니다! 선생님이 배정 결과를 나중에 알려주실 거예요.");
+        
+        // 폼 초기화 (선택사항)
+        // document.getElementById('cleaningForm').reset();
+    }
+</script>
+
+</body>
+</html>
