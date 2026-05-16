@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교사용 - 청소 당번 배정 시스템</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 30px;
+        }
+        .admin-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 15px;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 15px;
+            color: #2980b9;
+        }
+        .btn-run {
+            background-color: #2980b9;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .btn-run:hover {
+            background-color: #2471a3;
+        }
+        /* 프린트용 스타일: 인쇄 시 버튼 등 불필요한 요소 숨김 */
+        @media print {
+            body { background: #fff; padding: 0; }
+            .admin-container { box-shadow: none; padding: 0; }
+            .btn-run, .info-box { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="admin-container">
+    <h1>👨‍🏫 2026학년도 하반기 청소 당번 관리 (교사용)</h1>
+    
+    <div class="info-box">
+        💡 <strong>안내:</strong> 반 학생 26명의 신청이 모두 마감되었는지 확인 후 아래 버튼을 눌러주세요. 배정표가 생성되면 브라우저의 인쇄 기능(Ctrl+P)을 이용해 바로 교실 게시판에 붙일 수 있습니다.
+    </div>
+
+    <button class="btn-run" onclick="runAssignment()">자동 배정 실행 및 결과 보기</button>
+
+    <div id="resultArea">
+        <p style="text-align: center; color: #7f8c8d; padding: 50px 0;">
+            아직 배정 전입니다. 위 버튼을 눌러 배정을 시작해 주세요.
+        </p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
